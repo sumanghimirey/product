@@ -12,7 +12,10 @@
 */
 
 Route::get('/login',['as'=>'loginUser','uses'=>'UserController@login']);
-
+Route::post('/login',['as'=>'userSave','uses'=>'UserController@userSave']);
+Route::post('/login',['as'=>'postLogin','uses'=>'UserController@postLogin']);
 Route::group(['middleware'=>['auth']],function(){
     Route::get('/product',['as'=>'productList','uses'=>'ProductController@index']);
+
+
 });
