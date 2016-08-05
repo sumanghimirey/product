@@ -9,6 +9,11 @@
             {{ session('messege') }}
         </div>
     @endif
+        @if (session('status'))
+            <div class="alert alert-danger">
+                {{ session('status') }}
+            </div>
+        @endif
         </div>
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-login">

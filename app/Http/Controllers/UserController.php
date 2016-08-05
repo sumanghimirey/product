@@ -31,7 +31,7 @@ class UserController extends Controller
 
         if(Auth::attempt($request->only('username','password'))){
 
-            return redirect()->intended();
+            return redirect()->intended(route('productList'));
         }
         return redirect()->back()->with('status','Login Failed');
     }
