@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login',['as'=>'loginUser','uses'=>'UserController@login']);
+
+Route::group(['middleware'=>['auth']],function(){
+    Route::get('/product',['as'=>'productList','uses'=>'ProductController@index']);
 });
