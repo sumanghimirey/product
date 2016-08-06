@@ -35,4 +35,10 @@ class UserController extends Controller
         }
         return redirect()->back()->with('status','Login Failed');
     }
+
+    function logout(){
+
+        return redirect('login');
+
+    }
 }
