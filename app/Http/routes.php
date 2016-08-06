@@ -14,8 +14,10 @@
 Route::get('/login',['as'=>'loginUser','uses'=>'UserController@login']);
 Route::post('/register',['as'=>'userSave','uses'=>'UserController@userSave']);
 Route::post('/login',['as'=>'postLogin','uses'=>'UserController@postLogin']);
+Route::get('/',['as'=>'products','uses'=>'ProductController@index']);
+
 Route::group(['middleware'=>['auth']],function(){
-    Route::get('/product',['as'=>'productList','uses'=>'ProductController@index']);
+    Route::get('/product/create',['as'=>'productCreate','uses'=>'ProductController@create']);
     Route::get('/logout',['as'=>'logout','uses'=>'UserController@logout']);
 
 
