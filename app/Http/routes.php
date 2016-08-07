@@ -16,9 +16,11 @@ Route::post('/register',['as'=>'userSave','uses'=>'UserController@userSave']);
 Route::post('/login',['as'=>'postLogin','uses'=>'UserController@postLogin']);
 Route::get('/',['as'=>'products','uses'=>'ProductController@index']);
 
+
+
 Route::group(['middleware'=>['auth']],function(){
     Route::get('/product/create',['as'=>'productCreate','uses'=>'ProductController@create']);
+    Route::post('/product/create',['as'=>'saveProduct','uses'=>'ProductController@store']);
     Route::get('/logout',['as'=>'logout','uses'=>'UserController@logout']);
-
-
+    Route::get('productShow/{id}',['as'=>'productList','uses'=>'ProductController@show']);
 });

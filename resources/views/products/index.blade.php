@@ -22,7 +22,7 @@
                         @foreach($products as $product)
                         <div class="col-md-6">
                             <img src="assets/image/{{$product->image}}">
-                            <h4>{{$product->title}}</h4>
+                            <h4><a class="btn btn-default" href="{{ route('productList', $product->id) }}" >{{$product->title}}</a></h4>
                             <p>{{$product->description}}</p>
                             <h5>{{$product->price}}</h5>
 
